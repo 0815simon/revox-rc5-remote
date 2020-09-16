@@ -8,6 +8,6 @@ Notes for wire diagram Wemos --> serial link:
 Connect D8 to DIN pin 3
 GND to DIN 2
 
-If you want to disable the internal IR-receiver using only signals via serial link shortcut pin DIN 1+2 and DIN 4+5. You can use the 5v to power the device. 
+If you want to disable the internal IR-receiver using only signals via serial link shortcut pin DIN 1+2 and DIN 4+5. You can use the 5V from pin 5 to power the device. 
 
 Eveything you do is on your own risk!
