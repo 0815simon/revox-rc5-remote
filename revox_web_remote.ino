@@ -8,10 +8,8 @@ const char* ssid     = "my-SSID";
 const char* password = "my-password";
 ESP8266WebServer server(80);
 
-
 int kRecvPin = 14; //Empfänger Pin D5 bei Wemos
 int outPin = 15; // Digitalpin 8 bei wemos
-
 
 IRrecv irrecv(kRecvPin);
 decode_results results;
@@ -52,8 +50,6 @@ const int RC5_BACK1 = 0xB94;
 
 const int RC5_OPEN = 0x38D;
 const int RC5_OPEN1 = 0xB8D;
-
-
 
 void handle_root() {
 
@@ -184,33 +180,58 @@ void handle_button() {
   if(task == "mute")
   {
      message += "{mute}";
+     senden("1000", "110100");
   }
   
+  if(task == "stop")
+  {
+     message += "{stop}";
+     senden("0000", "000110");
+  }
+  if(task == "play")
+  {
+     message += "{play}";
+     senden("0000", "100110");
+  }
   else if(task == "poweroff")
   {
      message += "{poweroff}";
      senden("1000", "111111");
-     delay(100);
   }
   else if(task == "tv")
   {
      message += "{tv}";
-     Serial.print("button pressed: TV Hurra!");
+     senden("1000", "111100");
   }
    else if(task == "tape1")
   {
      message += "{tape1}";
+     senden("1000", "001100");
+  }
+   else if(task == "phono")
+  {
+     message += "{phono}";
+     senden("1000", "101100");
+  }
+   else if(task == "back")
+  {
+     message += "{back}";
+     senden("0000", "100011");
+  }
+   else if(task == "open")
+  {
+     message += "{open}";
+     senden("0000", "011110");
   }
   else if(task == "volup")
   {
      message += "{volup}";
-  
+     senden("1000", "100010");
   }
   else if(task == "voldn")
   {
      message += "{voldn:}";
-       delay(100);
-     
+     senden("1000", "000010");
   }
   Serial.print("button pressed: ");
   Serial.println(task);
