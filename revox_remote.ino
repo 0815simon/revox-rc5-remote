@@ -1,12 +1,12 @@
 #include <Arduino.h>
-#include <IRremoteESP8266.h>
+#include <IRremoteESP8266.h> //using IRremote.h when using Arduino
 #include <IRrecv.h>
 #include <IRutils.h>
 #include <ESP8266WebServer.h>
 
 
 int kRecvPin = 14; //Empfänger Pin D5 bei Wemos
-int outPin = 15; // Digitalpin 8 bei wemos
+int outPin = 15; // Digitalpin 8 bei Wemos
 
 
 IRrecv irrecv(kRecvPin);
@@ -216,10 +216,10 @@ for (byte i = 0; i < 6; i = i + 1) {
 
 switch (Zeichen[i]){
   case '0':
-  delayMicroseconds(280);      // 50 Mikrosekunden warten
+  delayMicroseconds(280);      // 280 Mikrosekunden warten
   break;
   case '1':
-  delayMicroseconds(130);      // 50 Mikrosekunden warten
+  delayMicroseconds(130);      // 130 Mikrosekunden warten
   break;
 }
 } //ende ITTcode-Ausführung
