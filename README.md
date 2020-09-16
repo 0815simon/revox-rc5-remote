@@ -1,7 +1,7 @@
 # revox-rc5-remote
 Convert any RC5 signals to ITT via serial link using esp8266 (Wemos D1, NodeMCU)
 
-# revox-rc5-remote
+# revox-web-remote
 does the same, but adds a small webserver to control some functions
 
 This is my very first public project because I needed a remote for my Revox B250 and B226. Because I did not find any I started hacking (trial and error style) and stopped when it worked for me. 
